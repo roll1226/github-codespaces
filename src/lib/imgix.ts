@@ -5,7 +5,7 @@ const CACHE_MAX_SIZE = 100;
 const OGP_WIDTH = 1200;
 const OGP_HEIGHT = 630;
 const DEFAULT_IMGIX_DOMAIN = "your-imgix-domain.imgix.net";
-const BASE_IMAGE_PATH = "yep/ogp.jpg";
+const BASE_IMAGE_PATH = "demo/ogp.jpg";
 const TRANSPARENT_TEXT_URL = "https://assets.imgix.net/~text";
 
 // フォントサイズ設定

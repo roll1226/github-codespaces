@@ -1,4 +1,4 @@
-# yep demo post
+# demo post
 
 Next.js + Hono + imgixを使用した投稿デモサイトです。
 

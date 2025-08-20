@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | yep demo post",
-    default: "yep demo post",
+    template: "%s | demo post",
+    default: "demo post",
   },
   description: "投稿を作成・共有できるデモサイト",
   robots: {

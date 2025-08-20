@@ -29,7 +29,7 @@ export const generateMetadata = async ({
       title: ogpData.title,
       description: ogpData.description || "投稿の詳細を表示しています",
       openGraph: {
-        title: `${ogpData.title} | yep demo post`,
+        title: `${ogpData.title} | demo post`,
         description: ogpData.description || "投稿の詳細を表示しています",
         images: [
           {
@@ -42,7 +42,7 @@ export const generateMetadata = async ({
       },
       twitter: {
         card: "summary_large_image",
-        title: `${ogpData.title} | yep demo post`,
+        title: `${ogpData.title} | demo post`,
         description: ogpData.description || "投稿の詳細を表示しています",
         images: [ogpData.ogpUrl],
       },

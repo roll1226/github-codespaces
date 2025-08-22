@@ -32,7 +32,6 @@
   "search.exclude": {
     "**/tmp": true
   },
-  "window.openFoldersInNewWindow": "on",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.tabSizing": "shrink",
@@ -59,11 +58,6 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "intelephense.diagnostics.undefinedClassConstants": false,
-  "intelephense.diagnostics.undefinedConstants": false,
-  "intelephense.diagnostics.undefinedFunctions": false,
-  "intelephense.diagnostics.undefinedProperties": false,
-  "intelephense.diagnostics.undefinedTypes": false,
   "editor.suggestSelection": "first",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

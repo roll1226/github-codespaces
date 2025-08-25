@@ -1,0 +1,26 @@
+{
+  "name": "AWS Hands On Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Github.copilot",
+        "Github.copilot-chat",
+        "streetsidesoftware.code-spell-checker",
+        "vscodevim.vim",
+        "k--kato.intellij-idea-keybindings",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "github.github-vscode-theme",
+        "pkief.material-icon-theme"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  }
+}

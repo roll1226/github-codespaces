@@ -1,16 +1,14 @@
 {
-  "name": "Docker in Docker",
+  "name": "Docker in Docker Development",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "runArgs": [
-    "--init",
-    "--privileged"
-  ],
-  "mounts": [
-    "source=dind-var-lib-docker,target=/var/lib/docker,type=volume"
-  ],
-  "overrideCommand": false,
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": true,
+      "dockerDashComposeVersion": "v2"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -37,7 +35,23 @@
   },
   "forwardPorts": [
     3000,
-    4983
+    4983,
+    5432
   ],
-  "remoteUser": "vscode"
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js App",
+      "onAutoForward": "notify"
+    },
+    "4983": {
+      "label": "Drizzle Studio",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "node"
 }

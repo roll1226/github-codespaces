@@ -1,8 +1,16 @@
 {
-  "name": "AWS Hands On Container",
+  "name": "Docker in Docker",
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "runArgs": [
+    "--init",
+    "--privileged"
+  ],
+  "mounts": [
+    "source=dind-var-lib-docker,target=/var/lib/docker,type=volume"
+  ],
+  "overrideCommand": false,
   "customizations": {
     "vscode": {
       "extensions": [
@@ -14,13 +22,22 @@
         "mhutchie.git-graph",
         "eamodio.gitlens",
         "github.github-vscode-theme",
-        "pkief.material-icon-theme"
-      ]
+        "pkief.material-icon-theme",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20"
-    }
-  }
+  "forwardPorts": [
+    3000,
+    4983
+  ],
+  "remoteUser": "vscode"
 }

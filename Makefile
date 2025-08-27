@@ -12,6 +12,8 @@ down: ## Docker環境を停止
 restart: ## Docker環境を再起動
 	@make down
 	@make up
+ps: ## Docker環境の状態を表示
+	docker compose ps
 
 logs: ## Dockerコンテナのログを表示
 	docker compose logs -f

@@ -40,33 +40,9 @@ until docker info > /dev/null 2>&1; do
     sleep 2
 done
 
-echo "🐳 Docker is ready! Starting Docker Compose services..."
-
-# # Docker Composeでサービスを起動
-# docker compose up -d
-
-# # データベースが準備完了するまで待機
-# echo "⏳ Waiting for database to be ready..."
-# sleep 10
-
-# # データベースのマイグレーション実行（appコンテナ内で）
-# echo "🗄️ Running database migrations..."
-# docker compose exec app npm run db:push
-
-# # 初期データの投入
-# echo "🌱 Seeding database with initial data..."
-# docker compose exec app npm run db:seed
-
-# echo "🎉 Docker in Docker development environment setup complete!"
-# echo ""
-# echo "🌐 Available services:"
-# echo "  - Main App: http://localhost:3000"
-# echo "  - Drizzle Studio: http://localhost:4983"
-# echo "  - PostgreSQL: localhost:5432"
-# echo ""
-# echo "🐳 Docker commands:"
-# echo "  - Check status: docker compose ps"
-# echo "  - View logs: docker compose logs"
-# echo "  - Restart: docker compose restart"
-# echo ""
-# echo "Happy coding! 🚀"
+echo "🌐 Available services:"
+echo "  - Main App: http://localhost:3000"
+echo "  - Drizzle Studio: http://localhost:4983"
+echo "  - PostgreSQL: localhost:5432"
+echo ""
+echo "Happy coding! 🚀"

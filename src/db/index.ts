@@ -24,6 +24,8 @@ const pool = new Pool({
   // ヘルスチェック設定
   keepAlive: true,
   keepAliveInitialDelayMillis: 0,
+  // PostgreSQL設定
+  application_name: "next-hono-imgix",
 });
 
 // プールエラーハンドリング
@@ -32,10 +34,8 @@ pool.on("error", (err, client) => {
   console.error("Client info:", client ? "Client exists" : "No client");
 });
 
-pool.on("connect", (client) => {
+pool.on("connect", () => {
   console.log("Database pool connected");
-  // 接続時のクライアント設定
-  client.query("SET application_name = $1", ["next-hono-imgix"]);
 });
 
 pool.on("acquire", () => {

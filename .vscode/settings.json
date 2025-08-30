@@ -1,76 +1,74 @@
 {
-  "editor.padding.top": 16,
-  "diffEditor.renderSideBySide": false,
-  "editor.colorDecorators": false,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.showSlider": "always",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderControlCharacters": true,
-  "editor.renderLineHighlight": "all",
-  "editor.renderWhitespace": "all",
-  "editor.snippetSuggestions": "top",
-  "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  "emmet.showSuggestionsAsSnippets": true,
-  "emmet.triggerExpansionOnTab": true,
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.padding.top": 16, // "editor.fontFamily": "Electroharmonix",
+  "diffEditor.renderSideBySide": false, // Git の差分を行内に表示
+  "editor.colorDecorators": false, // カラーデコレーターを非表示
+  "editor.formatOnPaste": true, // ファイル保存時に自動でフォーマット
+  "editor.formatOnType": true, // 入力した行を自動でフォーマット
+  "editor.minimap.renderCharacters": false, // ミニマップの表示文字をブロックに変更
+  "editor.minimap.showSlider": "always", // 表示領域をミニマップで常にハイライト
+  "editor.multiCursorModifier": "ctrlCmd", // マウスでの複数選択時の修飾キーを変更
+  "editor.renderControlCharacters": true, // 制御文字を表示
+  "editor.renderLineHighlight": "all", // 選択行を行番号含めすべてハイライト
+  "editor.renderWhitespace": "all", // 半角スペースを常に表示
+  "editor.snippetSuggestions": "top", // Emmet などのスニペット候補を優先して表示
+  "editor.tabSize": 2, // タブのサイズ変更
+  "editor.wordWrap": "on", // エディターの幅で折り返し
+  "emmet.showSuggestionsAsSnippets": true, // Emmet の候補を表示
+  "emmet.triggerExpansionOnTab": true, // TAB キーで Emmet を展開できるようにする
   "emmet.variables": {
     "lang": "ja"
   },
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
   "[markdown]": {
-    "files.trimTrailingWhitespace": false
+    "files.trimTrailingWhitespace": false // Markdown のファイルは行末の空白をトリミングしない
   },
-  "html.format.contentUnformatted": "pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p",
-  "html.format.extraLiners": "",
-  "html.format.unformatted": null,
-  "html.format.wrapLineLength": 0,
+  "html.format.contentUnformatted": "pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p", // タグ内の記述はフォーマットしない
+  "html.format.extraLiners": "", // head, body, /html タグの前に改行を入れない
+  "html.format.unformatted": null, // フレージング・コンテンツ（旧インライン要素のようなタグ）はフォーマットしない
+  "html.format.wrapLineLength": 0, // 行の文字数制限を無くし自動で改行させない
   "search.exclude": {
     "**/tmp": true
   },
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
-  "workbench.editor.labelFormat": "short",
-  "workbench.editor.tabSizing": "shrink",
+  "window.openFoldersInNewWindow": "on", // 新規ワークスペースを別ウインドウで開く
+  "window.title": "${activeEditorMedium}${separator}${rootName}", // ウインドウ上部に表示する文字列の設定
+  "workbench.editor.labelFormat": "short", // タブに表示する文字列の設定
+  "workbench.editor.tabSizing": "shrink", // タブの表示設定
   "workbench.startupEditor": "none",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1500,
+  "files.autoSaveDelay": 3000,
   "files.associations": {
-    "*.vue": "vue",
-    "*.sql": "sql"
+    "*.vue": "vue"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "liveshare.featureSet": "insiders",
   "editor.minimap.scale": 2,
-  "liveshare.anonymousGuestApproval": "accept",
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.minimap.maxColumn": 60,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
   "editor.suggestSelection": "first",
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -80,7 +78,7 @@
     "**/node_modules": true
   },
   "editor.semanticTokenColorCustomizations": {},
-  "editor.fontFamily": "'PlemolJP-Text', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Moralerspace",
   "editor.bracketPairColorization.enabled": true,
   "workbench.editor.enablePreview": false,
   "window.zoomLevel": -1,
@@ -88,7 +86,6 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "tailwindCSS.emmetCompletions": true,
   "editor.parameterHints.cycle": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.parameterTypes.enabled": true,
@@ -106,21 +103,6 @@
   },
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off"
-  },
-  "[python]": {
-    "editor.formatOnType": true
-  },
   "debug.console.fontSize": 13,
   "chat.editor.fontSize": 13,
   "markdown.preview.fontSize": 13,
@@ -131,49 +113,45 @@
   },
   "editor.fontLigatures": false,
   "vim.useSystemClipboard": true,
+  "editor.codeLensFontFamily": "Moralerspace",
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 1)",
+  "editor.insertSpaces": true,
+  "files.insertFinalNewline": true,
+  "files.autoSave": "afterDelay",
   "cSpell.userWords": [
-    "codegen",
-    "golevelup",
-    "hasura",
-    "laravel",
-    "nodemon",
-    "pinia",
-    "steiger"
+    "arbf",
+    "arbfd",
+    "datetime",
+    "HOIKU",
+    "IFNULL",
+    "upsert"
   ],
-  "cSpell.ignoreWords": [
-    "typeorm",
-    "firestore",
-    "consts"
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "eslint.probe": [
+    "astro",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "mdx",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc"
   ],
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "workbench.colorTheme": "Sapphire",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit",
-    "source.addMissingImports": "always"
+  "git.useEditorAsCommitInput": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   },
-  "eslint.format.enable": true,
-  "git.autofetch": true,
-  "github.copilot.advanced": {
-    "authProvider": "github"
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
-  "vim.startInInsertMode": false,
-  "github.copilot.chat.localeOverride": "ja",
-  "workbench.iconTheme": "material-icon-theme",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "editor.inlineSuggest.edits.showCollapsed": true,
-  "chat.instructionsFilesLocations": {
-    ".github/instructions": true,
-    "/var/folders/z0/_y_tqghj4_vf25b0fbnscb4c0000gn/T/postman-collections-post-response.instructions.md": true,
-    "/var/folders/z0/_y_tqghj4_vf25b0fbnscb4c0000gn/T/postman-collections-pre-request.instructions.md": true,
-    "/var/folders/z0/_y_tqghj4_vf25b0fbnscb4c0000gn/T/postman-folder-post-response.instructions.md": true,
-    "/var/folders/z0/_y_tqghj4_vf25b0fbnscb4c0000gn/T/postman-folder-pre-request.instructions.md": true,
-    "/var/folders/z0/_y_tqghj4_vf25b0fbnscb4c0000gn/T/postman-http-request-post-response.instructions.md": true,
-    "/var/folders/z0/_y_tqghj4_vf25b0fbnscb4c0000gn/T/postman-http-request-pre-request.instructions.md": true
-  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
   "editor.editContext": false
 }

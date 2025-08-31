@@ -42,19 +42,34 @@ type PostsListProps = {
 };
 
 const PostsList = ({ posts }: PostsListProps) => {
-  // 投稿データの変換をメモ化
+  // 投稿データの変換をメモ化（ハイドレーション対応）
   const formattedPosts = useMemo(() => {
     if (!posts || posts.length === 0) return [];
 
-    return posts.map((post: Post) => ({
-      ...post,
-      formattedDate: format(
-        typeof post.createdAt === "string"
+    return posts.map((post: Post) => {
+      let formattedDate: string;
+
+      if (typeof window === "undefined") {
+        // サーバーサイドでは簡単な形式で表示
+        const date = typeof post.createdAt === "string"
           ? new Date(post.createdAt)
-          : post.createdAt,
-        "yyyy/MM/dd"
-      ),
-    }));
+          : post.createdAt;
+        formattedDate = date.toISOString().split('T')[0]; // YYYY-MM-DD形式
+      } else {
+        // クライアントサイドでは日本語形式
+        formattedDate = format(
+          typeof post.createdAt === "string"
+            ? new Date(post.createdAt)
+            : post.createdAt,
+          "yyyy/MM/dd"
+        );
+      }
+
+      return {
+        ...post,
+        formattedDate,
+      };
+    });
   }, [posts]);
 
   if (!posts || posts.length === 0) {

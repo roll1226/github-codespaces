@@ -65,8 +65,16 @@ type PostDetailProps = {
 };
 
 const PostDetail = ({ post }: PostDetailProps) => {
-  // 日付フォーマットをメモ化
+  // 日付フォーマットをメモ化（クライアントサイドでのみ実行）
   const formattedDate = useMemo(() => {
+    if (typeof window === "undefined") {
+      // サーバーサイドでは簡単な形式で表示
+      const date = typeof post.createdAt === "string"
+        ? new Date(post.createdAt)
+        : post.createdAt;
+      return date.toISOString().split('T')[0]; // YYYY-MM-DD形式
+    }
+
     return format(
       typeof post.createdAt === "string"
         ? new Date(post.createdAt)

@@ -37,9 +37,13 @@ type ThemeProviderProps = {
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  // ローカルストレージからテーマ設定を読み込み
+  // クライアントサイドでのみ実行されることを保証
   useEffect(() => {
+    setIsClient(true);
+
+    // ローカルストレージからテーマ設定を読み込み
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setIsDarkMode(savedTheme === "dark");
@@ -56,10 +60,31 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const toggleTheme = useCallback(() => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
-    localStorage.setItem("theme", newTheme ? "dark" : "light");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", newTheme ? "dark" : "light");
+    }
   }, [isDarkMode]);
 
   const { defaultAlgorithm, darkAlgorithm } = theme;
+
+  // ハイドレーションエラーを防ぐため、クライアントサイドでのみテーマトグルを表示
+  if (!isClient) {
+    return (
+      <ConfigProvider
+        theme={{
+          algorithm: defaultAlgorithm,
+          token: {
+            colorPrimary: "#1890ff",
+            borderRadius: 6,
+          },
+        }}
+      >
+        <ThemeContainer $isDarkMode={false}>
+          {children}
+        </ThemeContainer>
+      </ConfigProvider>
+    );
+  }
 
   return (
     <ConfigProvider

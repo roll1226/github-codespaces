@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
     // PPR (Partial Prerendering) を無効化してリアルタイムデータを確保
     ppr: false,
   },
+  // styled-componentsのSSRサポート
+  compiler: {
+    styledComponents: true,
+  },
   // API routesでキャッシュを無効化
   async headers() {
     return [
